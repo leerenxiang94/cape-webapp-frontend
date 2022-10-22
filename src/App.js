@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// import React, {useState} from "react";
+// import ViewPerformancePage from "./pages/sgfreevsl/sgfreevsl";
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <ViewPerformancePage/>
+//     </div>
+//   );
+// }
+// export default App;
+
+import React, { useEffect, useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+    const res = await fetch ("https://cape-webapp.herokuapp.com/api/salesFigure");
+    const json = await res.json();
+    setData(json);
+  })();
+  }, []);
+
+return <p>data: {JSON.stringify(data)}</p>;
 }
 
-export default App;
+export default App
