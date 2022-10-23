@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     (async () => {
-    const res = await fetch ("https://cape-webapp.herokuapp.com/api/salesFigure");
+    const res = await fetch ("https://cape-webapp.herokuapp.com/api/SGfreeVsl");
     const json = await res.json();
     setData(json);
   })();
