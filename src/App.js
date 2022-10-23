@@ -1,33 +1,48 @@
 import {apiEndpoint} from "./common";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState , Fragment} from 'react';
+
 import {getRequest} from "./requestBuilder";
 
 import ViewPerformancePage from "./pages/sgfreevsl/sgfreevsl"
 
-function App() {
-  const [data, setData] = useState(null);
+// function App() {
+  // const [data, setData] = useState(null);
 
-  useEffect(() => {
-    (async () => {
-    const res = await fetch (apiEndpoint + "/SGfreeVsl");
-    const json = await res.json();
-    setData(json);
-  })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //   const res = await fetch (apiEndpoint + "/SGfreeVsl");
+  //   const json = await res.json();
+  //   setData(json);
+  // })();
+  // }, []);
 
-return <p>data: {JSON.stringify(data)}</p>;
+// return <p>data: {JSON.stringify(data)}</p>;
 
-// const [isLoading, setIsLoading] = useState(false)
-// useEffect(() => {
-//   refreshSalesFigure();
-// }, [])
+const Page = () => {
+  const [response, setResponse] = useState(null);
 
-// const refreshSalesFigure = async () => {
-//   setIsLoading(true)
-//   const salesFigureObj = await getRequest(apiEndpoint + '/SGfreeVsl')
-//   // const salesFigure = salesFigureObj.data.salesFigure
+  const handlePost = async () => {
+    try {
+      const response = await fetch(apiEndpoint + "/SGfreeVsl");
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      const data = await response.json();
+      setResponse(data);
+    } catch (error) {
+      setResponse(error.message);
+    }
+  };
 
-//   return <p>data: {JSON.stringify()}</p>;
-// }
-}
-export default App
+  return (
+    <div>
+      <button onClick={handlePost}>SG Free Vsl List</button>
+      <pre>{JSON.stringify(response, null, 2)}</pre>
+    </div>
+  );
+};
+
+
+
+
+export default Page
