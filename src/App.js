@@ -1,24 +1,35 @@
 import {apiEndpoint} from "./common";
 import React, { useEffect, useState , Fragment} from 'react';
+import Home from "./Home";
+import ViewPerformancePage from "./pages/sgfreevsl/sgfreevsl";
 
-import {getRequest} from "./requestBuilder";
+function App() {
+  const setPage = (page) => {
+      const res = page.split("/");
+      const path = res[res.length - 1]
+      switch (path) {
+          case "":
+              return (
+                  <Home navigate={setCurrentPage} />
+              )
+        
+          case "viewPerformance":
+              return (
+                  <ViewPerformancePage navigate={setCurrentPage}/>
+              )
+         default:
+             return (
+                 <Home navigate={setCurrentPage} />
+             )
+      }
+  }
 
-import ViewPerformancePage from "./pages/sgfreevsl/sgfreevsl"
+  const getPage = () => {
+      const url = window.location.href.split("/");
+      return url[url.length - 1];
+  }
 
-// function App() {
-  // const [data, setData] = useState(null);
-
-  // useEffect(() => {
-  //   (async () => {
-  //   const res = await fetch (apiEndpoint + "/SGfreeVsl");
-  //   const json = await res.json();
-  //   setData(json);
-  // })();
-  // }, []);
-
-// return <p>data: {JSON.stringify(data)}</p>;
-
-const Page = () => {
+  const [currentPage, setCurrentPage] = useState(getPage());
   const [response, setResponse] = useState(null);
 
   const handlePost = async () => {
@@ -35,14 +46,15 @@ const Page = () => {
   };
 
   return (
-    <div>
-      <button onClick={handlePost}>SG Free Vsl List</button>
-      <pre>{JSON.stringify(response, null, 2)}</pre>
+  <div className="App">
+      {setPage(currentPage)}
+      <div>
+      {/* <button onClick={handlePost}>SG Free Vsl List</button> */}
+      {/* <pre>{JSON.stringify(response, null, 2)}</pre> */}
     </div>
-  );
-};
+  </div>
+);
+  }
 
+export default App;
 
-
-
-export default Page

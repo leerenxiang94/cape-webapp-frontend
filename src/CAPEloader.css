@@ -1,0 +1,10 @@
+
+.loading-message {
+    color: azure;
+    font-weight: bold;
+    font-family: Lato;
+}
+
+.loading-message-container {
+    padding-bottom: 20px;
+}
