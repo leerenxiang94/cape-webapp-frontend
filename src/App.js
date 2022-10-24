@@ -30,20 +30,20 @@ function App() {
   }
 
   const [currentPage, setCurrentPage] = useState(getPage());
-  const [response, setResponse] = useState(null);
+  // const [response, setResponse] = useState(null);
 
-  const handlePost = async () => {
-    try {
-      const response = await fetch(apiEndpoint + "/SGfreeVsl");
-      if (!response.ok) {
-        throw new Error(response.statusText);
-      }
-      const data = await response.json();
-      setResponse(data);
-    } catch (error) {
-      setResponse(error.message);
-    }
-  };
+  // const handlePost = async () => {
+  //   try {
+  //     const response = await fetch(apiEndpoint + "/SGfreeVsl");
+  //     if (!response.ok) {
+  //       throw new Error(response.statusText);
+  //     }
+  //     const data = await response.json();
+  //     setResponse(data);
+  //   } catch (error) {
+  //     setResponse(error.message);
+  //   }
+  // };
 
   return (
   <div className="App">

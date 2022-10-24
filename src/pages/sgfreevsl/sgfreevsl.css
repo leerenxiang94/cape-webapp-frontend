@@ -1,0 +1,39 @@
+.sales-figure-modal {
+    font-family: Lato;
+    background-color: #282c34;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 30vmin;
+}
+
+.sales-figure-header {
+    color: #04AA6D;
+    font-size: 20px;
+}
+
+.sales-figure-line {
+    border-width: 1px;
+    border-color: azure;
+    border-style: solid;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.sales-figure-row-title {
+    font-size: 2vmin;
+}
+
+.sales-figure-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.sales-figure-row-figure {
+    font-size: 2vmin;
+}
