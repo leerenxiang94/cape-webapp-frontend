@@ -6,10 +6,10 @@ import "./sgfreevsl.css";
 import React, {useEffect, useState} from "react";
 import {getRequest} from "../../requestBuilder";
 import {apiEndpoint} from "../../common";
+import '../../Home.css';
 
 const ViewPerformancePage = (props) => {
-
-const [response, setResponse] = useState([]);
+const [response, setResponse] = useState([]) 
 
 useEffect(() => {
     refreshOrders();
@@ -17,40 +17,39 @@ useEffect(() => {
 
 const refreshOrders = async () => {
     const pendingOrdersObject = await getRequest(apiEndpoint + '/SGfreeVsl')
-    setResponse(pendingOrdersObject)
-    }   
+    const salesFigure = pendingOrdersObject.data.SGfreeVsl.values
+    setResponse(salesFigure)
+}
+
+
 
 return (
-    
-  <div className="App">
-    
-       <div className="button-containers">
-         <div className="back-button-container" onClick={() => props.navigate("")}>
-              <img src={back} className="back-button interactive" alt="back"/>
-         </div>
-          <div className="refresh-button-container" onClick={refreshOrders}>
-              <img src={refresh} className="refresh-button interactive" alt="refresh"/>
-          </div>
-      </div>
-     <div className="logo-container interactive" onClick={() => props.navigate("")}>
-          <img src={logo} className="submit-order-app-logo" alt="logo"/>
-</div>
-<div>
-<pre>{JSON.stringify(response, null, 2)}</pre>
-
-{/* {Object.values(response).map((value, index) => {
-        return (
-          <div key={response.index}>
-            <h2>{response.value}</h2>
-
-            <hr />
-          </div>
-        );
-      })} */}
+    <div className="App">
+        <div className="button-containers">
+            <div className="back-button-container" onClick={() => props.navigate("")}>
+                <img src={back} className="back-button interactive" alt="back"/>
+            </div>
+            <div className="refresh-button-container" onClick={refreshOrders}>
+                <img src={refresh} className="refresh-button interactive" alt="refresh"/>
+            </div>
+        </div>
+        <div className="logo-container interactive" onClick={() => props.navigate("")}>
+            <img src={logo} className="submit-order-app-logo" alt="logo"/>
+        </div>
+        <div className = "sales-figure-row-figure">{
+    response.map( name => 
+    <ul>
+        {name[0]}{" "}
+        {name[1]}/
+        {name[2]}{" "}
+        {name[3]}{" "}
+        {name[4]}
+        </ul>)}
+  </div>
+  
     </div>
-</div>
-);
-
+)
 }
+
 
 export default ViewPerformancePage;
