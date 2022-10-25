@@ -3,6 +3,7 @@ import React, {useEffect} from "react";
 import {createRequestOptions} from "./requestBuilder";
 import {apiEndpoint} from "./common";
 
+
 const Home = (props) => {
     useEffect(() => {
         triggerBackend();
