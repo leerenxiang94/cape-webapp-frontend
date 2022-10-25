@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/cape-webapp-frontend/static/css/main.241db04b.css",
-    "main.js": "/cape-webapp-frontend/static/js/main.365adb30.js",
+    "main.css": "/cape-webapp-frontend/static/css/main.f8c43733.css",
+    "main.js": "/cape-webapp-frontend/static/js/main.e777caa4.js",
     "static/js/787.cda612ba.chunk.js": "/cape-webapp-frontend/static/js/787.cda612ba.chunk.js",
     "index.html": "/cape-webapp-frontend/index.html",
-    "main.241db04b.css.map": "/cape-webapp-frontend/static/css/main.241db04b.css.map",
-    "main.365adb30.js.map": "/cape-webapp-frontend/static/js/main.365adb30.js.map",
+    "main.f8c43733.css.map": "/cape-webapp-frontend/static/css/main.f8c43733.css.map",
+    "main.e777caa4.js.map": "/cape-webapp-frontend/static/js/main.e777caa4.js.map",
     "787.cda612ba.chunk.js.map": "/cape-webapp-frontend/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.241db04b.css",
-    "static/js/main.365adb30.js"
+    "static/css/main.f8c43733.css",
+    "static/js/main.e777caa4.js"
   ]
 }
