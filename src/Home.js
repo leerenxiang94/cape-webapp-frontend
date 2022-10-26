@@ -17,7 +17,7 @@ const Home = (props) => {
     return (
         <div className="App">
             <img src={logo} className="App-logo" alt="logo"/>
-            <div className="button" onClick={() => props.navigate("viewPerformance")}>
+            <div className="button" onClick={() => props.navigate("viewSGFreevsl")}>
                 View SG Free Vsl
             </div>
 

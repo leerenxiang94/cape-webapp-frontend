@@ -1,6 +1,6 @@
 import React, { useEffect, useState , Fragment} from 'react';
 import Home from "./Home";
-import ViewPerformancePage from "./pages/sgfreevsl/sgfreevsl";
+import ViewSGFreevslPage from "./pages/sgfreevsl/sgfreevsl";
 
 function App() {
   const setPage = (page) => {
@@ -12,9 +12,9 @@ function App() {
                   <Home navigate={setCurrentPage} />
               )
         
-          case "viewPerformance":
+          case "viewSGFreevsl":
               return (
-                  <ViewPerformancePage navigate={setCurrentPage}/>
+                  <ViewSGFreevslPage navigate={setCurrentPage}/>
               )
          default:
              return (
