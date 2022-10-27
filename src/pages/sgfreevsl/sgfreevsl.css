@@ -36,7 +36,7 @@
 
 .freevsl-figure-row-figure {
     text-align: center;
-    font-size: 3vmin;
+    font-size: 2vmin;
 }
 
 table {
@@ -46,7 +46,7 @@ table {
   }
     
   th {
-    background-color: #ffffff;
+    background-color: #fdffd7;
     color: #000000;
     font-family: Lato;
     font-size: 2vmin;
@@ -56,4 +56,56 @@ table {
   td {
     font-size: 2vmin;
     text-align: center;
+    border: 1px solid rgb(141, 133, 133);
+    empty-cells:hide;
+    
   }
+
+  .logo-container interactive{
+    height: 10vmin;
+    pointer-events: none;
+    background-color: azure;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+
+  .submit-order-app-logo{
+    height: 10vmin;
+    pointer-events: none;
+    background-color: azure;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+
+  
+ .searchbarwidth{
+    width: 50vmin;
+    margin-top: -80px;
+    margin-bottom: 10px;
+    border-width: px;
+    font-size: 2vmin;
+    text-align: center;
+ }
+
+
+ .back-button{
+  width: 5vmin;
+  margin-left: -0px;
+  margin-bottom: -40px;
+}
+
+.back-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 5vmin;
+  margin-left: -0px;
+  margin-bottom: -70px; 
+  
+}
+
+ .refresh-button{
+  width: 5vmin;
+  margin-left: 250px;
+  margin-bottom: -85px;
+ }
